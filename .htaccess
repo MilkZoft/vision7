@@ -1,0 +1,30 @@
+#ModRewrite:
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*) index.php
+</IfModule>
+
+#Cache:
+	<IFModule mod_headers.c>
+		<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+			Header set Cache-Control "max-age=290304000, public"
+		</FilesMatch>
+	
+		<FilesMatch "\.(xml|txt)$">
+			Header set Cache-Control "max-age=172800, public, must-revalidate"
+		</FilesMatch>
+		 
+		<FilesMatch "\.(html|htm)$">
+			Header set Cache-Control "max-age=7200, must-revalidate"
+		</FilesMatch>
+	</IfModule>
+
+#Disable E-Tags:
+	<IFModule mod_headers.c="">  
+		Header unset ETag 
+	</IFModule>  
+	
+	FileETag None
