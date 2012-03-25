@@ -9,7 +9,7 @@ if(!defined("_access")) {
 /**
  * General
  */
-define("_wURL", "http://localhost/tudestino");
+define("_wURL", "http://localhost/vision7");
 define("_wName", "Tu Destino");
 define("_wTheme", "vision7");
 define("_wSituation", "Active");
