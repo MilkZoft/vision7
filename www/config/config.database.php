@@ -30,10 +30,10 @@ if($production) {
 } else {
 	//Database Settings
 	define("_dbController", "mysqli");
-	define("_dbHost", "localhost");
+	define("_dbHost", "127.0.0.1");
 	define("_dbUser", "root"); 
-	define("_dbPwd", "");
-	define("_dbName", "vision7");
+	define("_dbPwd", "root");
+	define("_dbName", "zan_vision7");
 	define("_dbPort", "5432");
 	define("_dbPfx", "muu_");
 	
